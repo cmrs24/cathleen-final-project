@@ -40,11 +40,11 @@
 /*******************************************/
 
 body {
-  color: #000;
-  font-size: 12px;
+  color: white;
+  font-size: 24px;
   line-height: 1.4;
-  font-family: Helvetica, Arial, sans-serif;
-  background: url(../images/travelonpackages.jpg) no-repeat center center fixed;
+  font-family: 'Patrick Hand', cursive;
+  background: url(../images/pool.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -76,8 +76,9 @@ header {
   text-align: center;
   color: #fff;
   font-size: 38px;
-  font-weight: bold;
-  font-family: 'Lobster', cursive;
+  font-family: 'Patrick Hand', cursive;
+
+
   }
 
 .title p {
@@ -90,22 +91,39 @@ header {
   color: #000;
   font-size: 38px;
   font-weight: bold;
-  font-family: 'Lobster', cursive;
+  font-family: 'Patrick Hand', cursive;
   margin:10px;
   border: 0px;
 }
 
 #submit-btn:hover {
   background: #fff600;
+
 }
 
-#form-input {
-  width: 300px; 
+form {
+  width: 60%; 
   padding: 10px;
-  margin:10px;
+  margin:10px auto;
+  background-color: rgba(0,0,0, .8);
+  text-align: center;
 }
 
+div.ui-slider-range.ui-widget-header {
+    background: #0000ff;
+}
 
+#placeholder {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid black;
+    padding: 30px;
+    background-color: rgba(0,0,0, .5);
+}
 
+label {
+
+  display: block;
+}
 
 

@@ -7,33 +7,81 @@
 		<!-- external CSS links -->
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+
 
 
 	</head>
 	<body>
-		<header>
-			<div class="title">
-				<h1>Ca.Lc</h1>
-				<p>Your Price Savings Calculator</p>
-			</div>
-		</header>
-			<div class="container">
-				<form>
-					<ul>
-						<li><input type="field" value="input1" id="form-input"> </li>
-						<li> <input type="field" value="input2" id="form-input"> </li>
-						<li> <input type="field" value="input3" id="form-input"> </li>
-						<li> <input type="field" value="input4" id="form-input"> </li>
-					</ul>
 
-				</form>
+		<div id="container">
 
-				<input type="submit" value="Find Your Cost Savings" id="submit-btn">
+			<header>
+				<div class="title">
+					<h1>The Pool Calculator</h1>
+					<p>Find out how much money you'll save with FibreTech</p>
+				</div>
+			</header>
 
-			</div>
+					<form id="pool-form">
 
-		<script src='http://code.jquery.com/jquery-latest.min.js'></script>
-  		<script src="js/index.js"></script>
+						<div id="placeholder">
+
+							<label>What Region of the United States Do You Live In?</label>
+								<select id="region-type" name="regions">
+
+							
+								</select>
+
+							</div>
+
+						<div id="placeholder">
+
+						<label for="pool-type"> Which Type of Pool do you have?</label>
+
+						<input type="radio" id="pool-type" name="pool-type" value="above-ground">Above ground pool
+						<input type="radio" id="pool-type" name="pool-type" value="in-ground">In-ground pool
+						<input type="radio" id="pool-type" name="pool-type" value="other" >Other
+
+						</div>
+
+						<div id="placeholder">
+
+							<div id="resurface">
+								How Often Do You Resurface Your Pool (in years): <span id="currentval">10</span>
+			  					</div> <!-- resurface --> 
+			  
+			  				<div id="defaultslide"></div>	
+
+	  					</div>
+
+	  					<div id="placeholder">
+
+	  					<label for="surface-type"> What pool surface do you have?</label>
+						<input type="radio" id="surface-type" name="surface-type" value="quartz">Quartz
+						<input type="radio" id="surface-type" name="surface-type" value="pebble">Pebble
+						<input type="radio" id="surface-type" name="surface-type" value="plaster">Plaster
+						<input type="radio" id="surface-type" name="surface-type" value="other">Other
+
+						</div>
+
+						<input type="submit" value="Find Your Cost Savings" id="submit-btn">
+
+
+					</form> <!-- form --> 
+
+				</div>
+
+			<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+			 <link rel="stylesheet" type="text/css" media="all" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
+	  		<link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Acme">
+	  		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	  		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	</head>
+
+
+	  		<script src="js/index.js"></script>
+
+  		</div> <!-- #container --> 
 	</body>
 </html>
