@@ -1,32 +1,9 @@
-//slider stuff!//
-
-$(function(){
-  $('#defaultslide').slider({ 
-    max: 10,
-    min: 0,
-    value: 1,
-    slide: function(e,ui) {
-      $('#currentval').html(ui.value);
-    }
-  });
-  
-  $('#rangeslider').slider({
-    range: true,
-    min: 0,
-    max: 1000,
-    values: [ 90, 290 ],
-    slide: function( event, ui ) {
-      $('#rangeval').html(ui.values[0]+" - "+ui.values[1]);
-    }
-  });
-});
-
-//slider stuff end//
+$(document).ready(function(){
 
 
+//hide what should be hidden
 
-//calculation function begin//
-
+$(".hide").hide();
 
 
 //set price variables
@@ -35,8 +12,7 @@ $(function(){
    var surfacePrice = 0; 
    var resurfacePrice = 0;
 
-//pool type stuff
-
+//pool type calculations
 var poolType = ["above-ground", "in-ground", "other"];
 
 $('form').on('change', '#pool-type',function(){
@@ -45,38 +21,44 @@ $('form').on('change', '#pool-type',function(){
 
   if(poolType == 'above-ground') {
     typePrice = 100;
-    console.log(typePrice);
   }
 
   else if
     (poolType == 'in-ground') {
     typePrice = 200;
-    console.log(typePrice);
   }
 
   else if 
     (poolType == 'other') {
     typePrice = 0;
-    console.log(typePrice);
   }
 
 });
 
+//resurface price
+var resurfaceType = ["1-3", "3-6", "other"];
 
-//slider type stuff
+$('form').on('change', '#resurface-year',function(){
 
-// var resurfaceYear = [1,2,3,4,5,6,7,8,9,10];
+  var resurfaceType = $("input[name='resurface-year']:checked").val();
 
-// $('form').on('change', '#defaultval', function(){
+  if(resurfaceType == '1-3') {
+    resurfacePrice = 1000;
+  }
 
-//   var resurfaceYear = $("#defaultval").slider("value");
-//   console.log(value)
-//   resurfacePrice= sliderYear * 20;
+  else if
+    (resurfaceType == '3-6') {
+    resurfacePrice = 500;
+  }
 
-// });
+  else if 
+    (resurfaceType == '7') {
+    resurfacePrice = 200;
+  }
 
-//surface type stuff
+});
 
+//surface type calculations
 var surfaceType = ["pebble", "plaster", "other", "quartz"];
 
   $('form').on('change', '#surface-type',function(){
@@ -85,28 +67,23 @@ var surfaceType = ["pebble", "plaster", "other", "quartz"];
 
     if(surfaceType == 'pebble') {
       surfacePrice=500;
-      console.log(surfacePrice);
     }
     else if 
       (surfaceType == 'plaster') {
       surfacePrice=100;
-      console.log(surfacePrice);
     }
       else if 
       (surfaceType == 'quartz') {
       surfacePrice=100;
-      console.log(surfacePrice);
     }
     else if 
       (surfaceType == 'other') {
       surfacePrice=0;
-      console.log(surfacePrice);
     }
 
   });
 
-//region stuff
-
+//region type calculations
 var regionType = ["Select Region","Northeast", "Southeast", "West", "Midwest", "Southwest"];
 
 for(i=0;i<regionType.length;i++) {
@@ -117,42 +94,39 @@ for(i=0;i<regionType.length;i++) {
     var regionType = $('#region-type').val();
     if(regionType == 'Northeast') {
       regionPrice = 500;
-      console.log(regionPrice);
     }
     else if (regionType == 'Southeast') {
       regionPrice = 600;
-      console.log(regionPrice);
     }
     else if (regionType == 'West') {
     regionPrice = 900;
-    console.log(regionPrice);
     }
+
     else if (regionType == 'Midwest') {
     regionPrice = 1000;
-    console.log(regionPrice);
-
     }
+
     else if (regionType == 'Southwest') {
     regionPrice = 2000;
-    console.log(regionPrice);
     }
-
   });
 
-  //get total
 
-
-
-
-//show on button click
-
-
+//get total price, calculate savings, and show savings on button click
   $( "#submit-btn" ).click(function(e){
       e.preventDefault();
         var totalPrice = typePrice + surfacePrice + regionPrice + resurfacePrice;
-        $("#myModal").modal('show');
-        
-      });
+        var priceWithoutFiberTech = (100 + totalPrice) * 5;
+        var priceWithFiberTech = (500 + totalPrice);
+        var totalSavings = priceWithoutFiberTech - priceWithFiberTech;
+
+        $(".hide").html("By investing in FibreTech you will save a total of $" + totalSavings + " over the next 25 years!");
+        $(".hide").slideDown();
+        $("#submit-btn").hide();
+    });
+
+
+});
 
 
 

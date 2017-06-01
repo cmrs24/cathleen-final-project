@@ -2,87 +2,72 @@
 <html lang="en">
 	<head>
 
-		<title>Ca.Lc</title>
+    	<meta charset="utf-8">
+	    <meta name="fibretech calculator" content="fibretech calculator">
+    	<meta name="how much can you save with fibretech">
+
+		<title>FibreTech Calculator</title>
 
 		<!-- external CSS links -->
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
-
-
 	</head>
 	<body>
-
 		<div id="container">
-
 			<header>
 				<div class="title">
 					<h1>The FibreTech Calculator</h1>
-					<p>Calculate how much you can save by resurfacing your pool with FiberTech!</p>
+					<p>FibreTech is an investment. But with our 25 year warranty, this calculator will show you how much you'll save over the next 25 years</p>
 				</div>
 			</header>
 
-					<form id="pool-form">
+			<form id="pool-form">
+				<div id="placeholder">
+					<label>What Region of the United States Do You Live In?</label>
+					<select id="region-type" name="regions">
+					</select>
+				</div>
 
-						<div id="placeholder">
+				<div id="placeholder">
+					<label for="pool-type"> Which Type of Pool do you have?</label>
+					<input type="radio" id="pool-type" name="pool-type" value="above-ground">Above ground pool
+					<input type="radio" id="pool-type" name="pool-type" value="in-ground">In-ground pool
+					<input type="radio" id="pool-type" name="pool-type" value="other" >Other
+				</div>
 
-							<label>What Region of the United States Do You Live In?</label>
-								<select id="region-type" name="regions">
+				<div id="placeholder">
 
-							
-								</select>
+					
+					<label for="resurface-year"> How often do you resurface your pool currently?</label>
 
-							</div>
+					<input type="radio" id="resurface-year" name="resurface-year" value="1-3">Every 1-3 years
+					<input type="radio" id="resurface-year" name="resurface-year" value="3-6">Every 3-6 years
+					<input type="radio" id="resurface-year" name="resurface-year" value="7" >Every 7+ years
 
-						<div id="placeholder">
+	  			</div>
 
-						<label for="pool-type"> Which Type of Pool do you have?</label>
+	  			<div id="placeholder">
 
-						<input type="radio" id="pool-type" name="pool-type" value="above-ground">Above ground pool
-						<input type="radio" id="pool-type" name="pool-type" value="in-ground">In-ground pool
-						<input type="radio" id="pool-type" name="pool-type" value="other" >Other
-
-						</div>
-
-						<div id="placeholder">
-
-							<div id="defaultval">
-								How Often Do You Resurface Your Pool (in years): <span id="currentval" name="currentval">10</span>
-			  					</div> <!-- resurface --> 
-			  
-			  				<div id="defaultslide"></div>	
-
-	  					</div>
-
-	  					<div id="placeholder">
-
-	  					<label for="surface-type"> What pool surface do you have?</label>
-						<input type="radio" id="surface-type" name="surface-type" value="quartz">Quartz
-						<input type="radio" id="surface-type" name="surface-type" value="pebble">Pebble
-						<input type="radio" id="surface-type" name="surface-type" value="plaster">Plaster
-						<input type="radio" id="surface-type" name="surface-type" value="other">Other
-
-						</div>
-
-						<input type="submit" value="Find Your Cost Savings" id="submit-btn">
-
-
-					</form> <!-- form --> 
+	  				<label for="surface-type"> What pool surface do you have?</label>
+					<input type="radio" id="surface-type" name="surface-type" value="quartz">Quartz
+					<input type="radio" id="surface-type" name="surface-type" value="pebble">Pebble
+					<input type="radio" id="surface-type" name="surface-type" value="plaster">Plaster
+					<input type="radio" id="surface-type" name="surface-type" value="other">Other
 
 				</div>
 
+					<input type="submit" value="Find Out How Much You Will Save" id="submit-btn">
+						<p class="hide"></p>
+		
+		</form> 
 
-			<script src='http://code.jquery.com/jquery-latest.min.js'></script>
-			 <link rel="stylesheet" type="text/css" media="all" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
-	  		<link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Acme">
-	  		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+				<!-- script links -->
+				<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+				<script src="js/index.js"></script>
 	  
-	</head>
-
-
-	  		<script src="js/index.js"></script>
-
   		</div> <!-- #container --> 
 	</body>
 </html>

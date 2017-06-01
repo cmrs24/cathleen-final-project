@@ -41,7 +41,7 @@
 
 body {
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.4;
   font-family: 'Roboto Condensed', sans-serif;
   background: url(../images/pool.jpg) no-repeat center center fixed;
@@ -75,15 +75,16 @@ header {
 .title {
   text-align: center;
   color: #fff;
-  font-size: 38px;
+  font-size: 30px;
   font-family: 'Roboto Condensed', sans-serif;
-
 
   }
 
 .title p {
   font-size: 22px;
-  font-weight: normal
+  font-weight: normal;
+  margin-right: 25%;
+  margin-left:25%;
 }
 
 #submit-btn {
@@ -102,7 +103,7 @@ header {
 }
 
 form {
-  width: 60%; 
+  width: 50%; 
   padding: 10px;
   margin:10px auto;
   background-color: rgba(0,0,0, .8);
@@ -111,19 +112,44 @@ form {
 
 div.ui-slider-range.ui-widget-header {
     background: #0000ff;
+    margin-top: 10px;
 }
 
 #placeholder {
+    width: 70%;
+    margin: 10px auto;
+    border: 1px solid black;
+    padding: 15px;
+    background-color: rgba(0,0,0, .5);
+}
+
+.hide {
     width: 80%;
     margin: 10px auto;
     border: 1px solid black;
     padding: 30px;
-    background-color: rgba(0,0,0, .5);
+    background-color: yellow;
+    color: black;
 }
 
-label {
 
+label {
   display: block;
+}
+
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+
+#region-type {
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+}
+
+#defaultval {
+  margin-bottom: 10px;
 }
 
 
